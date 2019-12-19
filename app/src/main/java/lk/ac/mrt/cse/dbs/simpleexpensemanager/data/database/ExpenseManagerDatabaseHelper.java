@@ -1,4 +1,5 @@
 package lk.ac.mrt.cse.dbs.simpleexpensemanager.data.database;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -27,8 +28,8 @@ public class ExpenseManagerDatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_TransactionsTable =
             "DROP TABLE IF EXISTS " + TransactionsTable.TABLE_NAME;
 
-    public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "ExpenseManager.db";
+    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "ExpenseManager.db";
 
     public ExpenseManagerDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -48,4 +49,5 @@ public class ExpenseManagerDatabaseHelper extends SQLiteOpenHelper {
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
     }
+
 }
