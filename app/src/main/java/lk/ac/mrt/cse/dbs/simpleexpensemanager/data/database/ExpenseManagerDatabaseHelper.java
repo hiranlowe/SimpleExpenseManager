@@ -20,7 +20,8 @@ public class ExpenseManagerDatabaseHelper extends SQLiteOpenHelper {
                     TransactionsTable.COL2+ " TEXT," +
                     TransactionsTable.COL3+ " TEXT," +
                     TransactionsTable.COL4+ " TEXT," +
-                    TransactionsTable.COL5 + " TEXT)";
+                    TransactionsTable.COL5 + " TEXT, " +
+                    "FOREIGN KEY ("+TransactionsTable.COL3+") REFERENCES AccountsTable("+AccountsTable.COL2+"))";
 
     private static final String SQL_DELETE_AccountsTable =
             "DROP TABLE IF EXISTS " + AccountsTable.TABLE_NAME;
